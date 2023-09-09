@@ -53,9 +53,13 @@ func main() {
 		case iAns := <- ansChan:
 			// 13. if the answer is correct, increment the correct answer variable
 			if iAns == problem.answer {
+				fmt.Println("Correct!")
 				correctAnswers++
+			} else {
+				fmt.Println("Incorrect!")
 			}
 			if i == len(problems) - 1 {
+				fmt.Println("You have reached the end of the quiz.")
 				// 15. close the channel
 				close(ansChan)
 			}
